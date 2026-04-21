@@ -1,0 +1,208 @@
+#scanner-section {
+  position: relative;
+  width: 100vw;
+  height: 250px;
+  background: #0a0a0a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#scanner-section .controls {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+
+#scanner-section .control-btn {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: linear-gradient(135deg, rgba(30,30,35,0.95) 0%, rgba(20,20,25,0.95) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 16px;
+  color: #818cf8;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255,255,255,0.1) inset;
+}
+
+#scanner-section .control-btn:hover {
+  background: linear-gradient(135deg, #1e1e24 0%, #17171c 100%);
+  transform: scale(1.1) translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255,255,255,0.2) inset;
+}
+
+#scanner-section .control-btn:active {
+  transform: scale(0.95);
+}
+
+#scanner-section .speed-indicator {
+  display: none;
+}
+
+#scanner-section .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scanner-section .card-stream {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  z-index: 5;
+}
+
+#scanner-section .card-wrapper {
+   position: relative;
+   width: 400px;
+   height: 250px;
+   flex-shrink: 0;
+   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#scanner-section .card-line {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+  padding: 0 50vw;
+}
+
+#scanner-section .card-line:active {
+  cursor: grabbing;
+}
+
+#scanner-section .card-wrapper:hover {
+  transform: scale(1.02);
+}
+
+#scanner-section .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scanner-section .card-normal {
+  background: #111;
+  z-index: 2;
+  clip-path: inset(0 0 0 var(--clip-right, 0%));
+}
+
+#scanner-section .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.1);
+  transition: filter 0.5s ease;
+}
+
+#scanner-section .card-wrapper:hover .card-image {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+#scanner-section .card-ascii {
+  background: #0d0d0d;
+  z-index: 1;
+  clip-path: inset(0 calc(100% - var(--clip-left, 0%)) 0 0);
+}
+
+#scanner-section .ascii-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #6366f1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 13px;
+  overflow: hidden;
+  white-space: pre;
+  opacity: 0.8;
+  padding: 20px;
+  text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+#scanner-section .scanner {
+  display: none; /* Logic is handled by scannerCanvas */
+}
+
+#scanner-section .scan-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.2),
+    transparent
+  );
+  animation: scanEffect 0.6s ease-out;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes scanEffect {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+#scanner-section #particleCanvas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 120px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#scanner-section #scannerCanvas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
