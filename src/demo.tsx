@@ -8,7 +8,7 @@ export function SplineSceneBasic() {
   return (
     <Card
       id="hero"
-      className="w-full h-[400px] bg-black/[0.96] relative overflow-hidden mt-10 border-none rounded-none w-full min-h-[50vh]"
+      className="w-full bg-black/[0.96] relative overflow-hidden border-none rounded-none w-full min-h-[70vh]"
     >
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"

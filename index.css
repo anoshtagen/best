@@ -182,12 +182,11 @@ img {
 /* --- HERO SECTION --- */
 #hero.hero-section {
   position: relative;
-  min-height: 50vh;
+  min-height: 80vh;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center;
-  overflow: hidden;
-  padding: 20px 0 10px;
+  padding: 120px 0 80px;
   background: #0b0f14;
 }
 
