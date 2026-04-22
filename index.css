@@ -614,7 +614,7 @@ section {
 
 /* --- STATS --- */
 #stats {
-  padding: 1rem 0;
+  padding: 3rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -752,7 +752,7 @@ section {
 
 /* --- SERVICES --- */
 #services {
-  padding: 1rem 0;
+  padding: 3rem 0;
 }
 .services-header {
   text-align: center;
@@ -852,7 +852,7 @@ section {
 
 /* --- RADAR ECOSYSTEM --- */
 #radar-ecosystem {
-  padding: 1rem 0;
+  padding: 3rem 0;
 }
 .radar-section-header {
   text-align: center;
@@ -874,7 +874,7 @@ section {
 
 /* --- ABOUT (community-team style) --- */
 #about {
-  padding: 1rem 0;
+  padding: 3rem 0;
 }
 .about-section {
   display: flex;
