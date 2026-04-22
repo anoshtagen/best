@@ -8,7 +8,7 @@ export function SplineSceneBasic() {
   return (
     <Card
       id="hero"
-      className="w-full bg-black/[0.96] relative overflow-hidden border-none rounded-none w-full min-h-[70vh]"
+      className="w-full bg-black/[0.96] relative overflow-hidden border-none rounded-none w-full min-h-[85vh] lg:h-[750px]"
     >
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
@@ -51,8 +51,8 @@ export function SplineSceneBasic() {
           </div>
         </div>
 
-        {/* Right content */}
-        <div className="flex-1 relative w-full h-[300px] md:h-full">
+        {/* Right content - Made the robot container larger */}
+        <div className="flex-[1.4] relative w-full h-[400px] md:h-full lg:scale-110">
           <SplineScene
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full"
